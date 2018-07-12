@@ -1,4 +1,4 @@
 (ns Effect.Unsafe._foreign)
 
 (defn unsafePerformEffect [f]
-  (f))
+  (f nil))

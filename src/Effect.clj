@@ -6,18 +6,18 @@
 (defn bindE [a]
   (fn [f]
     (fn []
-      ((f (a))))))
+      ((f (a nil))))))
 
 (defn untilE [f]
   (fn []
-    (while (not (f)))
+    (while (not (f nil)))
     {}))
 
 (defn whileE [f]
   (fn [a]
     (fn []
-      (while (f)
-        (a))
+      (while (f nil)
+        (a nil))
       {})))
 
 (defn forE [lo]
