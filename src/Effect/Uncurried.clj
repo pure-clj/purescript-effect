@@ -42,20 +42,20 @@
 
 (defn runEffectFn1 [fu]
   (fn [a]
-    (fn []
+    (fn [& _]
       (fu a))))
 
 (defn runEffectFn2 [fu]
   (fn [a]
     (fn [b]
-      (fn []
+      (fn [& _]
         (fu a b)))))
 
 (defn runEffectFn3 [fu]
   (fn [a]
     (fn [b]
       (fn [c]
-        (fn []
+        (fn [& _]
           (fu a b c))))))
 
 (defn runEffectFn4 [fu]
@@ -63,7 +63,7 @@
     (fn [b]
       (fn [c]
         (fn [d]
-          (fn []
+          (fn [& _]
             (fu a b c d)))))))
 
 (defn runEffectFn5 [fu]
@@ -72,7 +72,7 @@
       (fn [c]
         (fn [d]
           (fn [e]
-            (fn []
+            (fn [& _]
               (fu a b c d e))))))))
 
 (defn runEffectFn6 [fu]
@@ -82,7 +82,7 @@
         (fn [d]
           (fn [e]
             (fn [f]
-              (fn []
+              (fn [& _]
                 (fu a b c d e f)))))))))
 
 (defn runEffectFn7 [fu]
@@ -93,7 +93,7 @@
           (fn [e]
             (fn [f]
               (fn [g]
-                (fn []
+                (fn [& _]
                   (fu a b c d e f g))))))))))
 
 (defn runEffectFn8 [fu]
@@ -105,7 +105,7 @@
             (fn [f]
               (fn [g]
                 (fn [h]
-                  (fn []
+                  (fn [& _]
                     (fu a b c d e f g h)))))))))))
 
 (defn runEffectFn9 [fu]
@@ -118,7 +118,7 @@
               (fn [g]
                 (fn [h]
                   (fn [i]
-                    (fn []
+                    (fn [& _]
                       (fu a b c d e f g h i))))))))))))
 
 (defn runEffectFn10 [fu]
@@ -132,5 +132,5 @@
                 (fn [h]
                   (fn [i]
                     (fn [j]
-                      (fn []
+                      (fn [& _]
                         (fu a b c d e f g h i j)))))))))))))
