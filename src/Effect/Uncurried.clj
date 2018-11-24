@@ -2,43 +2,43 @@
 
 (defn mkEffectFn1 [fu]
   (fn [x]
-    ((fu x))))
+    ((fu x) nil)))
 
 (defn mkEffectFn2 [fu]
   (fn [a b]
-    (((fu a) b))))
+    (((fu a) b) nil)))
 
 (defn mkEffectFn3 [fu]
   (fn [a b c]
-    ((((fu a) b) c))))
+    ((((fu a) b) c) nil)))
 
 (defn mkEffectFn4 [fu]
   (fn [a b c d]
-    (((((fu a) b) c) d))))
+    (((((fu a) b) c) d) nil)))
 
 (defn mkEffectFn5 [fu]
   (fn [a b c d e]
-    ((((((fu a) b) c) d) e))))
+    ((((((fu a) b) c) d) e) nil)))
 
 (defn mkEffectFn6 [fu]
   (fn [a b c d e f]
-    (((((((fu a) b) c) d) e) f))))
+    (((((((fu a) b) c) d) e) f) nil)))
 
 (defn mkEffectFn7 [fu]
   (fn [a b c d e f g]
-    ((((((((fu a) b) c) d) e) f) g))))
+    ((((((((fu a) b) c) d) e) f) g) nil)))
 
 (defn mkEffectFn8 [fu]
   (fn [a b c d e f g h]
-    (((((((((fu a) b) c) d) e) f) g) h))))
+    (((((((((fu a) b) c) d) e) f) g) h) nil)))
 
 (defn mkEffectFn9 [fu]
   (fn [a b c d e f g h i]
-    ((((((((((fu a) b) c) d) e) f) g) h) i))))
+    ((((((((((fu a) b) c) d) e) f) g) h) i) nil)))
 
 (defn mkEffectFn10 [fu]
   (fn [a b c d e f g h i j]
-    (((((((((((fu a) b) c) d) e) f) g) h) i) j))))
+    (((((((((((fu a) b) c) d) e) f) g) h) i) j) nil)))
 
 (defn runEffectFn1 [fu]
   (fn [a]

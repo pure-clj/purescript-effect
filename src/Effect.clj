@@ -6,7 +6,7 @@
 (defn bindE [a]
   (fn [f]
     (fn [& _]
-      ((f (a nil))))))
+      ((f (a nil)) nil))))
 
 (defn untilE [f]
   (fn [& _]
@@ -25,10 +25,10 @@
     (fn [f]
       (fn [& _]
         (doseq [i (range lo hi)]
-          ((f i)))))))
+          ((f i) nil))))))
 
 (defn foreachE [as]
   (fn [f]
     (fn [& _]
       (doseq [a as]
-        ((f a))))))
+        ((f a) nil)))))
